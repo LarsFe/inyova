@@ -59,8 +59,9 @@
       >
     </div>
 
-    <div class="form__group">
+    <div class="form__group" aria-labelledby="group-label">
       <p
+        id="group-label"
         class="form__label"
         [ngClass]="{'is-invalid': this.personalDetailsForm.controls.dob.invalid}"
       >
@@ -73,6 +74,7 @@
           type="number"
           formControlName="day"
           placeholder="Day"
+          aria-label="day"
           required
         >
         <input
@@ -80,6 +82,7 @@
           type="number"
           formControlName="month"
           placeholder="Month"
+          aria-label="month"
           required
         >
         <input
@@ -87,6 +90,7 @@
           type="number"
           formControlName="year"
           placeholder="Year"
+          aria-label="year"
           required
         >
       </div>
