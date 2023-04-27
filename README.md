@@ -24,6 +24,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - radio buttons (kept defaults)
   - to stay consistent in terms of error highlighting (only labels)
   - if needed it can be implemented with pseudo-elements (after / before)
+- buttons 'Book consultation' and 'Open account' will have contrast error in terms accessibility
 
 **Most difficulties**
 - getting to know Angular in general as it's the first time working with it
