@@ -67,6 +67,14 @@ p {
   font-weight: 400;
 }
 
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
 .main {
   min-height: calc(100vh - 56px);
   margin: 0 auto;
