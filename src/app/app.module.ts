@@ -16,6 +16,7 @@ import { NextStepsComponent } from './pages/next-steps/next-steps.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookConsultationComponent } from './pages/book-consultation/book-consultation.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 import { personalDetailsReducer } from '../app/store/personal-details.reducer';
 
@@ -32,6 +33,7 @@ import { personalDetailsReducer } from '../app/store/personal-details.reducer';
     NotificationComponent,
     HomeComponent,
     BookConsultationComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

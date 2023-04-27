@@ -10,6 +10,7 @@ import { NextStepsComponent } from './pages/next-steps/next-steps.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookConsultationComponent } from './pages/book-consultation/book-consultation.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -32,6 +33,7 @@ describe('AppComponent', () => {
         NotificationComponent,
         HomeComponent,
         BookConsultationComponent,
+        PageNotFoundComponent,
       ],
     }).compileComponents();
   });
