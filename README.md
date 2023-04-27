@@ -4,6 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Project Image](project-image.png)
 
+**Important**
+
+Node and npm should have been configured within the project to avoid running into errors on project setup.
+- node version: v16.17.0
+- npm version: 8.15.0
+
 **Assignment contains the following features of Angular:**
 
 - Routing, Navigation (not optimized on mobile)
