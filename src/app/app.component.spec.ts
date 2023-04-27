@@ -13,7 +13,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       /*
         add components to avoid Error NG0304: 'app-xxx' is not a known element
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
         FooterComponent,
         DisclaimerComponent,
         NextStepsComponent,
-        NotificationComponent
+        NotificationComponent,
       ],
     }).compileComponents();
   });

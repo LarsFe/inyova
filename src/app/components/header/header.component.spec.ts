@@ -14,13 +14,15 @@ describe('HeaderComponent', () => {
       declarations: [
         HeaderComponent,
         NavigationComponent,
-        DropdownComponent
+        DropdownComponent,
       ],
       /*
         add RouterModule to avoid Error NG0303: Can't bind to 'routerLink' since it
         isn't a known property of 'a' (used in the 'HeaderComponent' component template)
       */
-      imports:[RouterModule.forRoot([])],
+      imports:[
+        RouterModule.forRoot([]),
+      ],
     })
     .compileComponents();
 

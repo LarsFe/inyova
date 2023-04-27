@@ -9,7 +9,10 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterComponent, DisclaimerComponent ]
+      declarations: [
+        FooterComponent,
+        DisclaimerComponent,
+      ],
     })
     .compileComponents();
 

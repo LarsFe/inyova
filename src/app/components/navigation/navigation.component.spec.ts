@@ -9,8 +9,12 @@ describe('NavigationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavigationComponent ],
-      imports:[RouterModule.forRoot([])],
+      declarations: [
+        NavigationComponent,
+      ],
+      imports:[
+        RouterModule.forRoot([]),
+      ],
     })
     .compileComponents();
 

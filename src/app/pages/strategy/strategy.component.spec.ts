@@ -8,7 +8,9 @@ describe('StrategyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StrategyComponent ]
+      declarations: [
+        StrategyComponent,
+      ],
     })
     .compileComponents();
 

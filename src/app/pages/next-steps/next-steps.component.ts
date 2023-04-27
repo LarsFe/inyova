@@ -8,7 +8,7 @@ import { PersonalDetailsState } from '../../store/personal-details.reducer';
 @Component({
   selector: 'app-next-steps',
   templateUrl: './next-steps.component.html',
-  styleUrls: ['./next-steps.component.scss']
+  styleUrls: ['./next-steps.component.scss'],
 })
 export class NextStepsComponent {
   title: string = 'Next Steps';
