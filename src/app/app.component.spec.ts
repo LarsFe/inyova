@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 import { NextStepsComponent } from './pages/next-steps/next-steps.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BookConsultationComponent } from './pages/book-consultation/book-consultation.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -28,6 +30,8 @@ describe('AppComponent', () => {
         DisclaimerComponent,
         NextStepsComponent,
         NotificationComponent,
+        HomeComponent,
+        BookConsultationComponent,
       ],
     }).compileComponents();
   });
