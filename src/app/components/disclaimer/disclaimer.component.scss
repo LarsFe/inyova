@@ -1,0 +1,23 @@
+.disclaimer {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  width: 280px;
+
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 30px;
+  }
+
+  __icon {
+    height: 30px;
+    width: auto;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__link {
+    font-weight: bold;
+  }
+}

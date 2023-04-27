@@ -1,0 +1,69 @@
+.button {
+  border: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  &--primary,
+  &--secondary,
+  &--quaternary {
+    width: 233px;
+    padding: 15px 10px;
+  }
+
+  &--primary {
+    background: var(--button-backkground-pri);
+    border: 0.5px solid #E5E5E5;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.5);
+  }
+
+  &--secondary {
+    background: var(--button-backkground-sec);
+    border-radius: 2px;
+    color: var(--text-color-sec);
+  }
+
+  &--tertiary {
+    align-items: center;
+    background: var(--button-backkground-ter);
+    color: var(--text-color-sec);
+    display: flex;
+    gap: 8px;
+    padding: 15px 20px;
+  }
+
+  &--quaternary {
+    background: var(--button-backkground-qua);
+    border-radius: 2px;
+    color: var(--text-color-sec);
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+
+    &:disabled,
+    &[disabled] {
+      background: var(--button-backkground-qua-disabled);
+      cursor: default;
+    }
+  }
+
+  &--rounded {
+    border-radius: 25px;
+  }
+
+  &--chat {
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &--personal-details {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+
+.button__icon-chat {
+  height: 19px;
+  width: auto;
+}

@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    DropdownComponent
+    DropdownComponent,
+    FooterComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,

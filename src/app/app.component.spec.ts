@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component'; 
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -19,7 +21,9 @@ describe('AppComponent', () => {
         AppComponent,
         DropdownComponent,
         HeaderComponent,
-        NavigationComponent
+        NavigationComponent,
+        FooterComponent,
+        DisclaimerComponent
       ],
     }).compileComponents();
   });
