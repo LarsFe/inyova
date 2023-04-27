@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '../components/header/header.component'; 
-import { DropdownComponent } from '../components/dropdown/dropdown.component';
-import { NavigationComponent } from '../components/navigation/navigation.component';
+import { HeaderComponent } from './components/header/header.component'; 
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
