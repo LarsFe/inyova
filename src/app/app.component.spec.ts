@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from '../components/header/header.component'; 
+import { DropdownComponent } from '../components/dropdown/dropdown.component';
+import { NavigationComponent } from '../components/navigation/navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -8,8 +11,15 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule
       ],
+      /*
+        add components to avoid Error NG0304: 'app-xxx' is not a known element
+        (used in the 'HeaderComponent' component template)
+      */
       declarations: [
-        AppComponent
+        AppComponent,
+        DropdownComponent,
+        HeaderComponent,
+        NavigationComponent
       ],
     }).compileComponents();
   });
@@ -18,18 +28,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'inyova-assignment'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('inyova-assignment');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('inyova-assignment app is running!');
   });
 });

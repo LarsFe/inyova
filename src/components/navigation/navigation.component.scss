@@ -1,0 +1,20 @@
+.navigation {
+  align-items: center;
+  display: flex;
+  gap: 32px;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.navigation__item {
+  align-items: center;
+  display: flex;
+  height: 72px;
+
+  &.is-current {
+    box-shadow: inset 0px -5px var(--primary-border-color);
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,80 @@
+@font-face {
+  font-family: Canela;
+  src: url(../fonts/Canela.otf);
+}
+
+@font-face {
+  font-family: Helvetica;
+  src: url(../fonts/Helvetica.otf);
+}
+
+:root {
+  --color-1: #fff;
+  --color-2: #f8f6f1;
+  --color-3: #2f2c26;
+  --color-3-disabled: #b6b6b6;
+  --color-4: #ee3c15;
+  --color-5: #98b172;
+  --color-6: #e5e5e5;
+  --color-7: #ff6348;
+  
+  --primary-background-color: var(--color-1);
+  --secondary-background-color: var(--color-2);
+  --text-color-pri: var(--color-3);
+  --text-color-sec: var(--color-1);
+  --primary-border-color: var(--color-3);
+
+  --button-backkground-pri: var(--color-1);
+  --button-backkground-sec: var(--color-4);
+  --button-backkground-ter: var(--color-5);
+  --button-backkground-qua: var(--color-3);
+  --button-backkground-qua-disabled: var(--color-3-disabled);
+
+  --form-background: var(--color-1);
+  --border-color-form-fields: var(--color-6);
+  --form-label-error: var(--color-7);
+
+  --error-notification-background: var(--color-7);
+  --error-notification-color: var(--color-1);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  color: var(--text-color-pri);
+  font-family: Helvetica, Arial, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--secondary-background-color);
+  height: 100vh;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Canela, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+p {
+  font-weight: 400;
+}
+
+.main {
+  min-height: calc(100vh - 56px);
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 20px;
+
+  @media only screen and (min-width: 768px) {
+    min-height: calc(100vh - 72px);
+    padding: 50px;
+  }
+}

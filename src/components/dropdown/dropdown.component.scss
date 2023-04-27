@@ -1,0 +1,13 @@
+.dropdown {
+  align-items: center;
+  background: var(--secondary-background-color);
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
