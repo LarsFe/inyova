@@ -11,7 +11,7 @@ export interface PersonalDetailsState {
   nationality: string;
 }
 
-export const initialState: PersonalDetailsState = {
+const initialState: PersonalDetailsState = JSON.parse(localStorage.getItem('personalDetails') || JSON.stringify({
   gender: '',
   firstname: '',
   lastname: '',
@@ -19,18 +19,14 @@ export const initialState: PersonalDetailsState = {
   month: '',
   year: '',
   nationality: '',
-};
+}));
 
 export const personalDetailsReducer = createReducer(
   initialState,
-  on(setPersonalDetails, (state, { gender, firstname, lastname, day, month, year, nationality }) => ({
-    ...state,
-    gender,
-    firstname,
-    lastname,
-    day,
-    month,
-    year,
-    nationality,
-  }))
+  on(setPersonalDetails, (state, action) => {
+    const newState = { ...state, ...action };
+    localStorage.setItem('personalDetails', JSON.stringify(newState));
+
+    return newState;
+  }),
 );

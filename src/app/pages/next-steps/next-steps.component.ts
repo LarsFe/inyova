@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { setPersonalDetails } from '../../store/personal-details.actions';
+import { PersonalDetailsState } from '../../store/personal-details.reducer';
 
 @Component({
   selector: 'app-next-steps',
@@ -25,7 +27,27 @@ export class NextStepsComponent {
     nationality: new FormControl('', Validators.required),
   });
 
-  constructor(private store: Store) {}
+  personalDetails$!: Observable<PersonalDetailsState>;
+
+  constructor(private store: Store<{ personalDetails: PersonalDetailsState }>) {}
+
+  ngOnInit(): void {
+    this.personalDetails$ = this.store.select('personalDetails');
+
+    this.personalDetails$.subscribe((personalDetails) => {
+      this.personalDetailsForm.setValue({
+        gender: personalDetails.gender,
+        firstname: personalDetails.firstname,
+        lastname: personalDetails.lastname,
+        dob: {
+          day: personalDetails.day,
+          month: personalDetails.month,
+          year: personalDetails.year,
+        },
+        nationality: personalDetails.nationality,
+      });
+    });
+  }
 
   onSubmit() {
     this.submitted = true;
@@ -36,17 +58,21 @@ export class NextStepsComponent {
       return;
     }
 
+    const personalDetails = this.personalDetailsForm.value;
+
     this.store.dispatch(
       setPersonalDetails({
-        gender: `${this.personalDetailsForm.value.gender}`,
-        firstname: `${this.personalDetailsForm.value.firstname}`,
-        lastname: `${this.personalDetailsForm.value.lastname}`,
-        day: `${this.personalDetailsForm.controls.dob.value.day}`,
-        month: `${this.personalDetailsForm.controls.dob.value.month}`,
-        year: `${this.personalDetailsForm.controls.dob.value.year}`,
-        nationality: `${this.personalDetailsForm.value.nationality}`,
+        gender: `${personalDetails.gender}`,
+        firstname: `${personalDetails.firstname}`,
+        lastname: `${personalDetails.lastname}`,
+        day: `${personalDetails.dob?.day}`,
+        month: `${personalDetails.dob?.month}`,
+        year: `${personalDetails.dob?.year}`,
+        nationality: `${personalDetails.nationality}`,
       })
     );
+
+    this.submitted = false;
   }
 
   isFormInvalid = () => {
