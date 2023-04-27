@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { setPersonalDetails } from '../../store/personal-details.actions';
 
 @Component({
   selector: 'app-next-steps',
@@ -23,6 +25,8 @@ export class NextStepsComponent {
     nationality: new FormControl('', Validators.required),
   });
 
+  constructor(private store: Store) {}
+
   onSubmit() {
     this.submitted = true;
 
@@ -32,7 +36,17 @@ export class NextStepsComponent {
       return;
     }
 
-    console.log(this.personalDetailsForm.value);
+    this.store.dispatch(
+      setPersonalDetails({
+        gender: `${this.personalDetailsForm.value.gender}`,
+        firstname: `${this.personalDetailsForm.value.firstname}`,
+        lastname: `${this.personalDetailsForm.value.lastname}`,
+        day: `${this.personalDetailsForm.controls.dob.value.day}`,
+        month: `${this.personalDetailsForm.controls.dob.value.month}`,
+        year: `${this.personalDetailsForm.controls.dob.value.year}`,
+        nationality: `${this.personalDetailsForm.value.nationality}`,
+      })
+    );
   }
 
   isFormInvalid = () => {

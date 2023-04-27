@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { StrategyComponent } from './pages/strategy/strategy.component';
 import { NextStepsComponent } from './pages/next-steps/next-steps.component';
 import { NotificationComponent } from './components/notification/notification.component';
 
+import { personalDetailsReducer } from '../app/store/personal-details.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +27,16 @@ import { NotificationComponent } from './components/notification/notification.co
     DisclaimerComponent,
     StrategyComponent,
     NextStepsComponent,
-    NotificationComponent
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({ personalDetails: personalDetailsReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 10 }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
