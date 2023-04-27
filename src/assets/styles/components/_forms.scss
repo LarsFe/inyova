@@ -1,0 +1,48 @@
+.form {
+  background: var(--form-background);
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 390px;
+  padding: 10px;
+
+  &__group {
+    margin-bottom: 24px;
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__radios {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__radios-item {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+  }
+
+  &__label {
+    margin-bottom: 10px;
+  }
+
+  &__field {
+    border: 0;
+    border-bottom: 1px solid var(--border-color-form-fields);
+    height: 28px;
+    width: 100%;
+  }
+
+  &__dob {
+    display: flex;
+    gap: 24px;
+    width: 240px;
+  }
+}
+
+.ng-submitted .form__label.is-invalid {
+  color: var(--form-label-error);
+}

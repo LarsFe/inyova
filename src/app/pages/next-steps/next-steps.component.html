@@ -1,0 +1,125 @@
+<div class="personal-details">
+  <h1 class="personal-details__heading">Personal Details</h1>
+
+  <form id="personalDetailsForm" class="form" [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()">
+    <div class="form__group">
+      <p
+        class="form__label"
+        [ngClass]="{'is-invalid': this.personalDetailsForm.controls.gender.errors}"
+      >
+        Gender
+      </p>
+
+      <div class="form__radios">
+        <label class="form__radios-item">
+          <input type="radio" name="gender" value="male" formControlName="gender" required>Male
+        </label>
+
+        <label class="form__radios-item">
+          <input type="radio" name="gender" value="female" formControlName="gender" required>Female
+        </label>
+      </div>
+    </div>
+
+    <div class="form__group">
+      <label
+        class="form__label"
+        for="firstname"
+        [ngClass]="{'is-invalid': this.personalDetailsForm.controls.firstname.errors}"
+      >
+        First Name
+      </label>
+
+      <input
+        class="form__field"
+        id="firstname"
+        type="text"
+        formControlName="firstname"
+        placeholder="First name (as shown in passport / ID)"
+        required
+      >
+    </div>
+
+    <div class="form__group">
+      <label
+        class="form__label"
+        for="lastname"
+        [ngClass]="{'is-invalid': this.personalDetailsForm.controls.lastname.errors}"
+      >
+        Last Name
+      </label>
+
+      <input
+        class="form__field"
+        id="lastname"
+        type="text"
+        formControlName="lastname"
+        placeholder="Last name (as shown in passport / ID)"
+        required
+      >
+    </div>
+
+    <div class="form__group">
+      <p
+        class="form__label"
+        [ngClass]="{'is-invalid': this.personalDetailsForm.controls.dob.invalid}"
+      >
+        Date of Birth
+      </p>
+
+      <div class="form__dob" formGroupName="dob">
+        <input
+          class="form__field"
+          type="number"
+          formControlName="day"
+          placeholder="Day"
+          required
+        >
+        <input
+          class="form__field"
+          type="number"
+          formControlName="month"
+          placeholder="Month"
+          required
+        >
+        <input
+          class="form__field"
+          type="number"
+          formControlName="year"
+          placeholder="Year"
+          required
+        >
+      </div>
+    </div>
+
+    <div class="form__group">
+      <label
+        class="form__label"
+        for="nationality"
+        [ngClass]="{'is-invalid': this.personalDetailsForm.controls.nationality.errors}"
+      >
+        Nationality
+      </label>
+
+      <input
+        class="form__field"
+        id="nationality"
+        type="text"
+        formControlName="nationality"
+        placeholder="Nationality"
+        required
+      >
+    </div>
+  </form>
+
+  <button
+    form="personalDetailsForm"
+    type="submit"
+    class="button button--quaternary button--personal-details"
+  >
+    Continue
+  </button>
+
+  <app-disclaimer></app-disclaimer>
+  <app-notification *ngIf="this.isFormInvalid()" [message]="this.errorMessage"></app-notification>
+</div>

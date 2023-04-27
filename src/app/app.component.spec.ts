@@ -6,6 +6,8 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
+import { NextStepsComponent } from './pages/next-steps/next-steps.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -23,7 +25,9 @@ describe('AppComponent', () => {
         HeaderComponent,
         NavigationComponent,
         FooterComponent,
-        DisclaimerComponent
+        DisclaimerComponent,
+        NextStepsComponent,
+        NotificationComponent
       ],
     }).compileComponents();
   });
