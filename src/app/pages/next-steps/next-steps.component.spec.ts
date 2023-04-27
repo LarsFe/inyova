@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { NextStepsComponent } from './next-steps.component';
 import { DisclaimerComponent } from 'src/app/components/disclaimer/disclaimer.component';
+
+import { personalDetailsReducer } from '../../store/personal-details.reducer';
 
 describe('NextStepsComponent', () => {
   let component: NextStepsComponent;
@@ -10,8 +13,14 @@ describe('NextStepsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [ NextStepsComponent, DisclaimerComponent ]
+      imports: [
+        ReactiveFormsModule,
+        StoreModule.forRoot({ personalDetails: personalDetailsReducer }),
+      ],
+      declarations: [
+        NextStepsComponent,
+        DisclaimerComponent,
+      ]
     })
     .compileComponents();
 
