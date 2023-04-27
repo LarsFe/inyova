@@ -8,6 +8,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
+import { StrategyComponent } from './pages/strategy/strategy.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DisclaimerComponent } from './components/disclaimer/disclaimer.componen
     NavigationComponent,
     DropdownComponent,
     FooterComponent,
-    DisclaimerComponent
+    DisclaimerComponent,
+    StrategyComponent
   ],
   imports: [
     BrowserModule,
